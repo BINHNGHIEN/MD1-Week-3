@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<input type="text" id="st1">
+<button onclick="themvaomang" id="st2">Add</button>
+<button onclick="inramang" id="st3">Display</button>
+<div id="result"></div>
+
+</body>
+<script>
+    let x = 0;
+    let array = Array();
+    function themvaomang() {
+        array[x] = document.getElementById("st1").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("st1").value = "";}
+
+    function inramang() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</html>

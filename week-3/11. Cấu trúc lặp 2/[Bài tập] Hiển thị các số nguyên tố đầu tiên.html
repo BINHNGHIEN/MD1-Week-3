@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a= parseInt(prompt("Nhập vào số x, hiển thị ra x số nguyên tố"));
+    let count=1;
+    for(N=2; count<=a;N++){
+        let check= true;
+        for(let i=2;i<N;i++){
+            if (N%i==0){
+                check=false;
+                break;
+            }
+        } if (check==true){
+            count++;
+            document.write("Số nguyên tố là :"+N);
+            document.write("</br>");
+        }
+    }
+
+</script>
+</body>
+</html>

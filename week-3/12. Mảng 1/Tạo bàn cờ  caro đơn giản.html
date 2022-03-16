@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    td{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 30px;
+    }
+</style>
+<body>
+<table  id="board" border="1px" cellspacing="0"></table>
+<script>
+    const PLAYER1="X";
+    const PLAYER2="0";
+    let turn = PLAYER1;
+    function createBoard(){
+    let html="";
+    for(i=0;i<10;i++) {
+        html += "<tr>";
+        for (j = 0; j < 10; j++) {
+            html += "<td onclick='clickcell(this)'></td>";
+        }
+        html += "</tr>";
+    }
+    document.getElementById("board").innerHTML = html;
+    }
+    createBoard();
+
+    function clickcell(cell){
+       if(cell.innerHTML===""){
+           if(turn===PLAYER1){
+               cell.innerHTML=PLAYER1;
+               turn= PLAYER2;
+           } else{
+               cell.innerHTML=PLAYER2;
+               turn=PLAYER1;
+           }
+       }
+    }
+
+</script>
+
+</body>
+</html>
